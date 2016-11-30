@@ -9,13 +9,13 @@
 	<cfoutput>
 		<!--- Example Text Field --->
 		<div class="mura-control-group">
-			<label class="mura-control-label">Example Text</label>
+			<label>Example Text</label>
 			<input type="text" name="exampletext" class="objectParam" value="#esapiEncode('html_attr',objectParams.exampletext)#"/>
 		</div>
 
 		<!--- Example TextArea Field --->
 		<div class="mura-control-group">
-			<label class="mura-control-label">Example Text Area</label>
+			<label>Example Text Area</label>
 			<textarea name="exampletextarea" class="objectParam">#objectParams.exampletextarea#</textarea>
 		</div>
 
@@ -32,29 +32,24 @@
 
 		<!--- Example Radio Group --->
 		<div class="mura-control-group">
-			<label class="mura-control-label">
-				Example Radio Group
-			</label>
-
-			<label>
-				<input type="radio" class="objectParam" name="exampleradio" value="true" <cfif objectParams.exampleradio> checked</cfif>/>
-				Yes
-			</label>
-
-			<label>
-				<input type="radio" class="objectParam" name="exampleradio"value="false "<cfif not objectParams.exampleradio> checked</cfif>/>
-				No
-			</label>
+			<label>Example Radio Group</label>
+			<div class="radio-group">
+				<label class="radio"><input type="radio" class="objectParam" name="exampleradio" value="true" <cfif objectParams.exampleradio> checked</cfif>/>Yes</label>
+				<label class="radio"><input type="radio" class="objectParam" name="exampleradio"value="false "<cfif not objectParams.exampleradio> checked</cfif>/>No</label>
+		  </div>
 		</div>
 
 		<!--- Example Checkboxes	--->
 		<div class="mura-control-group">
+			<label>Example Checkboxes</label>
+			<div class="checkbox-group">
 			<cfloop list="option1,option2" item="i">
-				<label class="mura-control-label">
+				<label class="checkbox">
 					<input type="checkbox" class="objectParam" name="examplecheckbox" value="#i#"<cfif listFind(objectParams.examplecheckbox,i)> checked</cfif>>
 						#i#
 				</label>
 			</cfloop>
+		  </div>
 		</div>
 	</cfoutput>
 
